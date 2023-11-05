@@ -135,6 +135,7 @@
     "husky": "8.0.3",
     "lerna": "6.6.2",
     "lint-staged": "13.1.2",
-    "ts-node": "10.9.1"
+    "ts-node": "10.9.1",
+    "coverage": "0.4.1"
   }
 }
