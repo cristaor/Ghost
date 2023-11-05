@@ -113,19 +113,6 @@ jobs:
       is_main: ${{ github.ref == 'refs/heads/main' }}
       has_browser_tests_label: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'browser-tests') }}
 
-  sonarcloud:
-    name: SonarCloud
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
 
   job_install_deps:
     name: Install Dependencies
@@ -193,7 +180,21 @@ jobs:
     outputs:
       dependency_cache_key: ${{ env.cachekey }}
 
-   job_i18n:
+
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  job_i18n:
     runs-on: ubuntu-latest
     needs: [job_get_metadata, job_install_deps]
     name: i18n
