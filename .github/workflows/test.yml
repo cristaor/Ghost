@@ -29,6 +29,7 @@ jobs:
 
       - run: yarn --prefer-offline
       - run: yarn test:unit
+      - run: yarn test:coverage
 
       - uses: actions/upload-artifact@v3
         if: startsWith(matrix.node, '18')
