@@ -14,7 +14,7 @@ function useDynamicSVGImport(
     options: UseDynamicSVGImportOptions = {}
 ) {
     const [loading, setLoading] = useState(false);
-    const [SvgComponent, setSvgComponent] = useState<React.FC<React.SVGProps<SVGSVGElement>> | null | undefined>(null);
+    const [svgComponent, setSvgComponent] = useState<React.FC<React.SVGProps<SVGSVGElement>> | null | undefined>(null);
     const [error, setError] = useState<Error>();
 
     const {onCompleted, onError} = options;
@@ -37,7 +37,7 @@ function useDynamicSVGImport(
         importIcon();
     }, [name, onCompleted, onError]);
 
-    return {error, loading, SvgComponent};
+    return {error, loading, svgComponent};
 }
 
 export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | number;
@@ -54,7 +54,6 @@ interface IconProps {
      * Accepts all colors available in the actual TailwindCSS theme, e.g. `black`, `green-100`
      */
     colorClass?: string;
-    styles?: string;
     className?: string;
 }
 
