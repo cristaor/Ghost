@@ -55,11 +55,7 @@ describe('Auth Service - Members', function () {
                 };
                 const jwt = require('jsonwebtoken');
 
-                jwt.sign(payload, key, { algorithm: 'HS256' });
-
-                /*const token = jwt.sign(claims, null, {
-                    algorithm: 'none'
-                });*/
+                jwt.sign(payload, key, {algorithm: 'HS256'});
 
                 const req = {
                     get() {
