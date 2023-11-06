@@ -26,8 +26,7 @@ const BlurryStickyFooter: React.FC<StickyFooterProps> = ({
     const contentHeight = `82px`;
 
     return (
-        <>
-            <div className={containerClasses}
+        <div className={containerClasses}
                 style={{
                     bottom: containerBottom,
                     height: containerHeight
@@ -42,7 +41,6 @@ const BlurryStickyFooter: React.FC<StickyFooterProps> = ({
                     {children}
                 </div>
             </div>
-        </>
     );
 };
 
