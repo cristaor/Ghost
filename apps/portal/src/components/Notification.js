@@ -226,7 +226,6 @@ export default class Notification extends React.Component {
     }
 
     render() {
-        //const Style = Styles({brandColor: this.context.brandColor});
         const Style = Styles();
         const frameStyle = {
             ...Style.frame
