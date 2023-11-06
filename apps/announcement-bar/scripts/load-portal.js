@@ -1,6 +1,6 @@
 /** Script to load Portal bundle for local development */
 function loadScript(src) {
-    var script = document.createElement('script');
+    let script = document.createElement('script');
     script.src = src;
     document.head.appendChild(script);
 }
