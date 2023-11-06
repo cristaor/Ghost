@@ -53,9 +53,14 @@ describe('Auth Service - Members', function () {
                 const claims = {
                     rumpel: 'stiltskin'
                 };
-                const token = jwt.sign(claims, null, {
+                const jwt = require('jsonwebtoken');
+
+                jwt.sign(payload, key, { algorithm: 'HS256' });
+
+                /*const token = jwt.sign(claims, null, {
                     algorithm: 'none'
-                });
+                });*/
+
                 const req = {
                     get() {
                         return `GhostMembers ${token}`;
