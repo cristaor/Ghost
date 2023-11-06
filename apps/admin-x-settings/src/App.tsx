@@ -15,7 +15,7 @@ interface AppProps {
     setDirty?: (dirty: boolean) => void;
 }
 
-function App({ghostVersion, officialThemes, setDirty}: AppProps) {
+function App({ghostVersion, officialThemes, setDirty}: ReadOnly<AppProps>) {
     return (
         <ServicesProvider ghostVersion={ghostVersion} officialThemes={officialThemes}>
             <DataProvider>
