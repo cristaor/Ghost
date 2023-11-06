@@ -19,7 +19,7 @@ const Button = ({
         green: link ? 'text-green hover:text-green-400' : 'bg-green text-white hover:bg-green-400',
         red: link ? 'text-red hover:text-red-400' : 'bg-red text-white hover:bg-red-400',
         white: link ? 'text-white hover:text-white' : 'bg-white text-black',
-        clear: link ? 'text-black hover:bg-grey-200' : 'text-black hover:bg-grey-200',
+        clear: 'text-black hover:bg-grey-200',
       };
     
       // Construcción de las clases CSS
