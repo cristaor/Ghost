@@ -32,6 +32,7 @@
     "lint": "lerna run lint",
     "test": "lerna run test",
     "test:unit": "lerna run test:unit",
+    "test:coverage": "lerna run test:coverage",
     "main": "yarn main:monorepo && yarn main:submodules",
     "main:monorepo": "git checkout main && git pull ${GHOST_UPSTREAM:-origin} main && yarn",
     "main:submodules": "git submodule sync && git submodule update && git submodule foreach \"git checkout main && git pull ${GHOST_UPSTREAM:-origin} main && yarn\"",
@@ -134,6 +135,7 @@
     "husky": "8.0.3",
     "lerna": "6.6.2",
     "lint-staged": "13.1.2",
-    "ts-node": "10.9.1"
+    "ts-node": "10.9.1",
+    "coverage": "0.4.1"
   }
 }
